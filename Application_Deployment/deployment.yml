@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-myapp
+  namespace: application
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp_nodejs
+  template:
+    metadata:
+      labels:
+        app: myapp_nodejs
+    spec:
+      containers:
+        - name: myapp_nodejs
+          image: abdo/app_image:latest
+          ports:
+            - name: httpport
+              containerPort: 3000
