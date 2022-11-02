@@ -5,7 +5,7 @@ pipeline {
             steps {
                 // Get some code from a GitHub repository
                  git branch: 'main',
-                    url: 'https://github.com/abdelrhman14/Graduation_Project_ITI.git'
+                    url: 'https://github.com/abdelrhman14/Graduation_Project_ITI/tree/main/node_app'
 
             }
         }
