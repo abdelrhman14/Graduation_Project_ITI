@@ -10,7 +10,7 @@ pipeline {
         }
         stage('continuous integration') {
             steps {
-                    withCredentials([usernameColonPassword(credentialsId: 'dockerhub_key', variable: '')]) {
+                    withDockerRegistry(credentialsId: 'dockerhub_key', url: 'https://hub.docker.com/') {
 
                     sh "sudo docker login -u ${USERNAME} -p ${PASSWORD}"
                     sh "sudo docker build node_app/ -t abdo/app_image ."
