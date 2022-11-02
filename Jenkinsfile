@@ -11,8 +11,8 @@ pipeline {
         stage('continuous integration') {
             steps {
                     withCredentials([usernamePassword(credentialsId: 'dockerhub_key', passwordVariable: 'abdo246800#', usernameVariable: 'abdelrahman1413')]) {
-                    sh "sudo docker login -u ${USERNAME} -p ${PASSWORD}"
-                    sh "sudo docker build node_app/ -t abdo/app_image ."
+                    sh "docker login -u ${USERNAME} -p ${PASSWORD}"
+                    sh "docker build node_app/ -t abdo/app_image ."
                     sh "docker push abdo/app_image"
                     
                 }
