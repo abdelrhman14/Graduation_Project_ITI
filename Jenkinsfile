@@ -15,6 +15,8 @@ pipeline {
                 {
                     sh "docker login -u ${USERNAME} -p ${PASSWORD}"
                   //  sh "cd node_app"
+                    sh "cd"
+                    git clone "https://github.com/abdelrhman14/Graduation_Project_ITI/tree/main/node_app"
                     sh "pwd"
                     sh "docker build -t app_image ."
                     sh "docker tag app_image abdelrahman1413/app_image"
