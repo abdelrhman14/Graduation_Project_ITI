@@ -15,8 +15,8 @@ pipeline {
                 {
                     sh "docker login -u ${USERNAME} -p ${PASSWORD}"
                     cd node_app
-                    sh "docker build -t abdo/app_image ."
-                    sh "docker push abdo/app_image"
+                    sh "docker build -t abdelrahman1413/app_image ."
+                    sh "docker push abdelrahman1413/app_image"
                     
                 }
             }    
